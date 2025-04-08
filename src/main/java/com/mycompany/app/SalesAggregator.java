@@ -2,6 +2,7 @@ package com.mycompany.app;
 
 import java.util.*;
 
+
 public class SalesAggregator {
 
     public static class Sale {
