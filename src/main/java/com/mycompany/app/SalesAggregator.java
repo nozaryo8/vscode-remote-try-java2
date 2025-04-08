@@ -52,8 +52,6 @@ public class SalesAggregator {
      * @return 日別の売上合計リスト（降順にソート済み）
      */
     public List<DailyTotal> aggregateByDate(List<Sale> sales) {
-        // TODO: ここに実装を書く
-        // ヒント: Map<String, Integer> を利用して、各日付ごとに金額を合算し、その後 List に変換してソートする
         return new ArrayList<>();
     }
 }
