@@ -1,4 +1,4 @@
-package com.example.sales;
+package com.mycompany.app;
 
 import java.util.*;
 
