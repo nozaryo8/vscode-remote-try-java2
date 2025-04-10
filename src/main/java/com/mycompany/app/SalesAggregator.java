@@ -83,5 +83,15 @@ public class SalesAggregator {
             this.date = date;
             this.amount = amount;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Sales sales = (Sales) o;
+            return Objects.equals(date, sales.date) && 
+                Objects.equals(amount, sales.amount);
+        }
+        
     }
 }

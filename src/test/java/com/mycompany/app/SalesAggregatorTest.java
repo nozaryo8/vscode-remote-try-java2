@@ -35,15 +35,9 @@ public class SalesAggregatorTest {
         
             List<SalesAggregator.Sales> result = aggregator.aggregateByDate(input);
     
-        // サイズを確認
-        assertEquals(3, result.size());
-        
-        // 内容を個別に確認
-        assertSalesListContains(result, parseDate("2025-04-08"), 30000);
-        assertSalesListContains(result, parseDate("2025-04-09"), 20000);
-        assertSalesListContains(result, parseDate("2025-04-07"), 10000);
+        // リストの順序も含めて完全に一致するか検証
+        assertEquals(expected, result);
     }
-
     private static Date parseDate(String dateStr) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -53,13 +47,4 @@ public class SalesAggregatorTest {
         }
     }
 
-    // カスタムアサーションメソッド
-    private void assertSalesListContains(List<SalesAggregator.Sales> salesList, Date date, int amount) {
-        for (SalesAggregator.Sales sales : salesList) {
-            if (sales.date.equals(date) && sales.amount.equals(amount)) {
-                return; // 一致するものが見つかった
-            }
-        }
-        fail("リストに以下の要素が含まれていません: 日付=" + date + ", 金額=" + amount);
-    }
 }
